@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Book</title>
+    <title>Register</title>
 </head>
 <body>
-    <h1>Edit Book</h1>
+    <h1>Register</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save Changes</button>
+        <button type="submit">Register</button>
     </form>
-    <a href="{% url 'librarian_view' %}">Back to Dashboard</a>
 </body>
 </html>
