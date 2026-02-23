@@ -29,6 +29,11 @@ def delete_book(request):
     return HttpResponse("You can delete a book")
 
 
+from .forms import ExampleForm
+def example_form_view(request):
+    form = ExampleForm()
+    return render(request, "bookshelf/form_example.html", {"form": form})
+
 
 """
 Security Note:
