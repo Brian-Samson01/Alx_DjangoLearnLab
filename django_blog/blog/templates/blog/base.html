@@ -13,6 +13,11 @@
     </header>
 
     <main>
+    {% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
         {% block content %}
         {% endblock %}
     </main>
