@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -11,8 +11,8 @@ from django.views.generic import (
     DeleteView
 )
 
-from .models import Post
-from .forms import RegisterForm, UpdateUserForm
+from .models import Post, Comment
+from .forms import RegisterForm, UpdateUserForm, CommentForm
 
 
 # ---------------- AUTH VIEWS ----------------
@@ -49,7 +49,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
-    ordering = ['-published_date']
+    ordering = ['-created_at']
 
 
 class PostDetailView(DetailView):
