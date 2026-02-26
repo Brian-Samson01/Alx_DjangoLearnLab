@@ -20,6 +20,11 @@
     {% endif %}
         {% block content %}
         {% endblock %}
+
+    <form method="GET" action="{% url 'search-posts' %}">
+        <input type="text" name="q" placeholder="Search posts..." value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
     </main>
 
     <script src="{% static 'blog/js/scripts.js' %}"></script>
