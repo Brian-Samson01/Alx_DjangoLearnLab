@@ -15,7 +15,8 @@
 {% endfor %}
 
 {% if user.is_authenticated %}
-    <a href="{% url 'comment-create' object.pk %}">Add Comment</a>
+    <a href="{% url 'comment-create' pk=object.pk %}">Add Comment</a>
 {% else %}
     <p><a href="{% url 'login' %}">Login</a> to comment.</p>
 {% endif %}
+
